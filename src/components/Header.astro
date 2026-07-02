@@ -1,0 +1,94 @@
+---
+const navItems = [
+  { href: "/", label: "Inicio" },
+  { href: "/nosotros", label: "Nosotros" },
+  { href: "/productos", label: "Productos" },
+  { href: "/contacto", label: "Contacto" },
+];
+---
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="/" class="logo">
+      <span class="letter">M</span>
+      <svg class="ring" width="26" height="26" viewBox="-13 -13 26 26">
+        <circle r="11" fill="#EF9F27" />
+        <circle r="7.7" fill="#ffffff" />
+        <circle r="4" fill="#042C53" />
+        <circle r="1.6" fill="#EF9F27" />
+      </svg>
+      <span class="letter">TTA</span>
+      <span class="kabel">KABEL</span>
+    </a>
+
+    <nav class="nav">
+      {navItems.map((item) => (
+        <a href={item.href}>{item.label}</a>
+      ))}
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    border-bottom: 1px solid #e5e3db;
+    padding: 18px 0;
+    position: sticky;
+    top: 0;
+    background: #ffffff;
+    z-index: 50;
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+  }
+
+  .logo .letter {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 22px;
+    color: var(--navy);
+    letter-spacing: 1px;
+  }
+
+  .logo .kabel {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 22px;
+    color: var(--navy);
+    letter-spacing: 3px;
+    margin-left: 8px;
+  }
+
+  .nav {
+    display: flex;
+    gap: 32px;
+  }
+
+  .nav a {
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--dark-text);
+  }
+
+  .nav a:hover {
+    color: var(--orange-dark);
+  }
+
+  @media (max-width: 640px) {
+    .nav {
+      gap: 16px;
+    }
+    .nav a {
+      font-size: 13px;
+    }
+  }
+</style>

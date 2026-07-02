@@ -1,0 +1,295 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const tier1 = [
+  { name: "MV-105", use: "Cable de media tensión para alimentación de equipos mineros de alta potencia." },
+  { name: "G-GC / SHD-GC", use: "Cables mineros flexibles para equipos móviles en superficie y subterráneo." },
+  { name: "TECK 90", use: "Cable multiconductor blindado para instalaciones fijas en planta." },
+];
+
+const tier2 = [
+  { name: "Instrumentación armada MC", use: "Señales de control en ambientes con riesgo mecánico." },
+  { name: "RS-485 / Profibus", use: "Comunicación industrial para redes de automatización." },
+  { name: "PLTC / TC multipolar", use: "Control multiconductor entre paneles y sensores." },
+  { name: "TC-ER (Tray Cable)", use: "Instalación directa en bandeja, sin conduit." },
+];
+
+const tier3 = [
+  { name: "SOOW / SJOOW", use: "Cables flexibles de servicio pesado para intemperie." },
+  { name: "Cable de reeling flexible", use: "Para equipos con movimiento repetitivo y carretes." },
+  { name: "Fibra óptica industrial", use: "Redes de datos de alta velocidad en planta." },
+  { name: "Instrumentación alta temp. (Pansinal)", use: "Señales en ambientes de temperatura extrema." },
+];
+
+const otros = [
+  { name: "Cable de energía XLPE", use: "Distribución eléctrica en construcción e industria general." },
+  { name: "Cable marino con cubierta de caucho", use: "Resistente a ambientes salinos, uso naval y pesquero." },
+  { name: "Cable solar / fotovoltaico", use: "Proyectos de energía renovable y paneles solares." },
+  { name: "Cable retardante a la llama", use: "Seguridad en edificaciones y plantas industriales." },
+];
+---
+<Layout title="Productos">
+  <section class="page-header">
+    <div class="container">
+      <h1>Catálogo de cables</h1>
+      <p class="subtitle">Cables industriales respaldados por Zetastone, distribuidos en Perú</p>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container">
+
+      <div class="tier-block">
+        <div class="tier-label">
+          <span class="badge badge-t1">Prioridad alta</span>
+          <span class="tier-desc">Los que siempre vas a necesitar</span>
+        </div>
+        <div class="grid grid-t1">
+          {tier1.map((item) => (
+            <div class="card-t1">
+              <h3>{item.name}</h3>
+              <p>{item.use}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="tier-block">
+        <div class="tier-label">
+          <span class="badge badge-t2">Pedidos frecuentes</span>
+          <span class="tier-desc">Tu ventana de oportunidad</span>
+        </div>
+        <div class="grid grid-list">
+          {tier2.map((item) => (
+            <div class="list-item">
+              <span class="dot dot-t2"></span>
+              <div>
+                <h4>{item.name}</h4>
+                <p>{item.use}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="tier-block">
+        <div class="tier-label">
+          <span class="badge badge-t3">Oportunidades de nicho</span>
+          <span class="tier-desc">Para cuando ya tengas volumen</span>
+        </div>
+        <div class="grid grid-list">
+          {tier3.map((item) => (
+            <div class="list-item">
+              <span class="dot dot-t3"></span>
+              <div>
+                <h4>{item.name}</h4>
+                <p>{item.use}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="other-section">
+        <h3>Otros cables de alta demanda</h3>
+        <div class="grid grid-list">
+          {otros.map((item) => (
+            <div class="list-item">
+              <span class="dot dot-other"></span>
+              <div>
+                <h4>{item.name}</h4>
+                <p>{item.use}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="cta-block">
+        <p>¿No encuentras el cable que necesitas o tienes dudas técnicas de especificación?</p>
+        <a href="/contacto" class="btn btn-primary">Consultar con un asesor técnico</a>
+      </div>
+
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-header {
+    background: var(--navy);
+    color: #ffffff;
+    padding: 60px 0 50px;
+  }
+
+  .page-header h1 {
+    color: #ffffff;
+    font-size: 36px;
+  }
+
+  .subtitle {
+    margin-top: 12px;
+    color: var(--blue-light);
+    font-size: 16px;
+  }
+
+  .content {
+    padding: 70px 0;
+  }
+
+  .tier-block {
+    margin-bottom: 56px;
+  }
+
+  .tier-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .badge {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+    padding: 5px 14px;
+    border-radius: 4px;
+  }
+
+  .badge-t1 { background: var(--navy); }
+  .badge-t2 { background: var(--blue); }
+  .badge-t3 { background: var(--gray-text); }
+
+  .tier-desc {
+    font-size: 13px;
+    color: var(--gray-text);
+    font-style: italic;
+  }
+
+  .grid-t1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .card-t1 {
+    border: 1.5px solid var(--navy);
+    border-radius: 8px;
+    padding: 22px;
+    position: relative;
+  }
+
+  .card-t1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--orange);
+    border-radius: 8px 8px 0 0;
+  }
+
+  .card-t1 h3 {
+    font-size: 19px;
+    margin-top: 6px;
+  }
+
+  .card-t1 p {
+    margin-top: 8px;
+    font-size: 13.5px;
+    color: var(--gray-text);
+    line-height: 1.6;
+  }
+
+  .grid-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px 32px;
+  }
+
+  .list-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 14px 0;
+    border-bottom: 1px solid #ece9df;
+  }
+
+  .dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    margin-top: 6px;
+    flex-shrink: 0;
+  }
+
+  .dot-t2 { background: var(--blue); }
+  .dot-t3 { background: var(--gray-text); }
+  .dot-other { background: var(--orange); }
+
+  .list-item h4 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--dark-text);
+  }
+
+  .list-item p {
+    margin-top: 2px;
+    font-size: 13px;
+    color: var(--gray-text);
+  }
+
+  .other-section {
+    background: var(--cream);
+    border-radius: 10px;
+    padding: 32px;
+    margin-bottom: 40px;
+  }
+
+  .other-section h3 {
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .other-section .list-item {
+    border-bottom-color: #e0ddd1;
+  }
+
+  .cta-block {
+    text-align: center;
+    padding: 40px 0 0;
+  }
+
+  .cta-block p {
+    font-size: 15px;
+    color: var(--dark-text);
+    margin-bottom: 18px;
+  }
+
+  .btn {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    padding: 14px 28px;
+    border-radius: 6px;
+    display: inline-block;
+  }
+
+  .btn-primary {
+    background: var(--orange);
+    color: var(--orange-dark);
+  }
+
+  @media (max-width: 768px) {
+    .grid-t1,
+    .grid-list {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,186 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Contacto">
+  <section class="page-header">
+    <div class="container">
+      <h1>Contacto</h1>
+      <p class="subtitle">Escríbenos y un asesor técnico te responde a la brevedad</p>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container two-col">
+
+      <div class="info-col">
+        <h2>Hablemos de tu proyecto</h2>
+        <p>
+          Ya sea que necesites cotización, asesoría técnica de especificación,
+          o disponibilidad de stock, escríbenos por el canal que prefieras.
+        </p>
+
+        <div class="info-list">
+          <a href="tel:+51961600733" class="info-item">
+            <span class="info-label">Teléfono</span>
+            <span class="info-value">+51 961 600 733</span>
+          </a>
+          <a href="mailto:contacto@mottakabel.com" class="info-item">
+            <span class="info-label">Correo</span>
+            <span class="info-value">contacto@mottakabel.com</span>
+          </a>
+          <a href="https://wa.me/51961600733" target="_blank" class="info-item">
+            <span class="info-label">WhatsApp</span>
+            <span class="info-value">Escríbenos directo</span>
+          </a>
+        </div>
+      </div>
+
+      <form class="contact-form" action="https://formspree.io/f/mvzjvvyq" method="POST">
+        <label>
+          Nombre
+          <input type="text" name="nombre" required />
+        </label>
+        <label>
+          Empresa
+          <input type="text" name="empresa" />
+        </label>
+        <label>
+          Correo
+          <input type="email" name="email" required />
+        </label>
+        <label>
+          Mensaje
+          <textarea name="mensaje" rows="5" required></textarea>
+        </label>
+        <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+      </form>
+
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-header {
+    background: var(--navy);
+    color: #ffffff;
+    padding: 60px 0 50px;
+  }
+
+  .page-header h1 {
+    color: #ffffff;
+    font-size: 36px;
+  }
+
+  .subtitle {
+    margin-top: 12px;
+    color: var(--blue-light);
+    font-size: 16px;
+  }
+
+  .content {
+    padding: 70px 0;
+  }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 56px;
+  }
+
+  .info-col p {
+    margin-top: 12px;
+    color: var(--gray-text);
+    font-size: 14.5px;
+    line-height: 1.7;
+  }
+
+  .info-list {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .info-item {
+    display: flex;
+    flex-direction: column;
+    padding: 16px 0;
+    border-bottom: 1px solid #ece9df;
+  }
+
+  .info-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--gray-text);
+  }
+
+  .info-value {
+    margin-top: 4px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 17px;
+    color: var(--navy);
+  }
+
+  .info-item:hover .info-value {
+    color: var(--orange-dark);
+  }
+
+  .contact-form {
+    background: var(--cream);
+    border-radius: 12px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .contact-form label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--dark-text);
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-family: var(--font-body);
+    font-size: 14px;
+    padding: 12px 14px;
+    border: 1px solid #d8d5c9;
+    border-radius: 6px;
+    background: #ffffff;
+    resize: vertical;
+  }
+
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    outline: none;
+    border-color: var(--blue);
+  }
+
+  .btn {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    padding: 14px 28px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-primary {
+    background: var(--orange);
+    color: var(--orange-dark);
+  }
+
+  @media (max-width: 768px) {
+    .two-col {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

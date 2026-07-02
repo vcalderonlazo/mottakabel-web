@@ -1,0 +1,165 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Nosotros">
+  <section class="page-header">
+    <div class="container">
+      <h1>Nosotros</h1>
+      <p class="subtitle">Consultores técnicos en cables, no solo un proveedor más</p>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container two-col">
+      <div>
+        <h2>Quiénes somos</h2>
+        <p>
+          Motta Kabel importa y distribuye cables industriales para minería,
+          energía, pesca y construcción en Perú. Pero nuestro valor real no está
+          solo en el producto: está en el acompañamiento técnico.
+        </p>
+        <p>
+          Entendemos que un cable equivocado, un retraso en la entrega, o una
+          especificación mal elegida puede detener un proyecto completo. Por eso
+          trabajamos como consultores técnicos, ayudando a nuestros clientes a
+          elegir el cable correcto para cada aplicación y garantizando la
+          continuidad operativa de sus operaciones.
+        </p>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <span class="stat-number">Top 20</span>
+          <span class="stat-label">Zetastone en el ranking integral de la industria de cables en China</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">4</span>
+          <span class="stat-label">Industrias atendidas: minería, energía, pesca y construcción</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="why">
+    <div class="container">
+      <h2>Por qué trabajar con nosotros</h2>
+      <div class="why-grid">
+        <div class="why-card">
+          <h3>Asesoría técnica real</h3>
+          <p>No solo vendemos cable, te ayudamos a especificar el correcto para tu aplicación.</p>
+        </div>
+        <div class="why-card">
+          <h3>Respaldo de fábrica</h3>
+          <p>Trabajamos con Zetastone, empresa de alta tecnología reconocida en la industria china de cables.</p>
+        </div>
+        <div class="why-card">
+          <h3>Continuidad operativa</h3>
+          <p>Entendemos la urgencia de tus proyectos y priorizamos que tu operación no se detenga.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-header {
+    background: var(--navy);
+    color: #ffffff;
+    padding: 60px 0 50px;
+  }
+
+  .page-header h1 {
+    color: #ffffff;
+    font-size: 36px;
+  }
+
+  .subtitle {
+    margin-top: 12px;
+    color: var(--blue-light);
+    font-size: 16px;
+  }
+
+  .content {
+    padding: 70px 0;
+  }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+
+  .content p {
+    margin-bottom: 16px;
+    color: var(--dark-text);
+  }
+
+  .stats {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .stat {
+    background: var(--cream);
+    border-radius: 10px;
+    padding: 24px;
+    border-left: 4px solid var(--orange);
+  }
+
+  .stat-number {
+    display: block;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 30px;
+    color: var(--navy);
+  }
+
+  .stat-label {
+    display: block;
+    margin-top: 6px;
+    font-size: 13px;
+    color: var(--gray-text);
+    line-height: 1.5;
+  }
+
+  .why {
+    background: var(--cream);
+    padding: 70px 0;
+  }
+
+  .why h2 {
+    margin-bottom: 32px;
+  }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .why-card {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 28px;
+  }
+
+  .why-card h3 {
+    font-size: 17px;
+    margin-bottom: 10px;
+  }
+
+  .why-card p {
+    font-size: 14px;
+    color: var(--gray-text);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .two-col,
+    .why-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
