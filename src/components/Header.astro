@@ -9,15 +9,7 @@ const navItems = [
 <header class="site-header">
   <div class="container header-inner">
     <a href="/" class="logo">
-      <span class="letter">M</span>
-      <svg class="ring" width="26" height="26" viewBox="-13 -13 26 26">
-        <circle r="11" fill="#EF9F27" />
-        <circle r="7.7" fill="#ffffff" />
-        <circle r="4" fill="#042C53" />
-        <circle r="1.6" fill="#EF9F27" />
-      </svg>
-      <span class="letter">TTA</span>
-      <span class="kabel">KABEL</span>
+      <img src="/img/logo.png" alt="Motta Kabel" class="logo-img" />
     </a>
 
     <nav class="nav">
@@ -47,24 +39,12 @@ const navItems = [
   .logo {
     display: flex;
     align-items: center;
-    gap: 2px;
   }
 
-  .logo .letter {
-    font-family: var(--font-heading);
-    font-weight: 700;
-    font-size: 22px;
-    color: var(--navy);
-    letter-spacing: 1px;
-  }
-
-  .logo .kabel {
-    font-family: var(--font-heading);
-    font-weight: 700;
-    font-size: 22px;
-    color: var(--navy);
-    letter-spacing: 3px;
-    margin-left: 8px;
+  .logo-img {
+    height: 30px;
+    width: auto;
+    display: block;
   }
 
   .nav {

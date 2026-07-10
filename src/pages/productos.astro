@@ -1,105 +1,222 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-const tier1 = [
-  { name: "MV-105", use: "Cable de media tensión para alimentación de equipos mineros de alta potencia." },
-  { name: "G-GC / SHD-GC", use: "Cables mineros flexibles para equipos móviles en superficie y subterráneo." },
-  { name: "TECK 90", use: "Cable multiconductor blindado para instalaciones fijas en planta." },
+const secciones = [
+  {
+    id: "mineros",
+    label: "Cables mineros",
+    intro: "Cables diseñados para resistir las exigencias mecánicas y eléctricas de la operación minera, en superficie y subterráneo.",
+    productos: [
+      {
+        nombre: "MV-105",
+        imagen: "/img/productos/MV105.png",
+        descripcion: "Cable de media tensión para alimentación de motores, transformadores y equipos de proceso — el cable más consumido en minería metálica.",
+        specs: [
+          { label: "Tensión de servicio", value: "5, 15 y 35 kV" },
+          { label: "Aplicación", value: "Motores, transformadores y equipos de proceso" },
+        ],
+      },
+      {
+        nombre: "G-GC / SHD-GC",
+        imagen: "/img/productos/GGC.png",
+        descripcion: "Cable flexible de media tensión pensado para equipos móviles como palas y fajas transportadoras, donde la resistencia mecánica es tan importante como la continuidad del suministro.",
+        specs: [
+          { label: "Tensión de servicio", value: "10, 15 y 25 kV" },
+          { label: "Aplicación", value: "Palas y fajas transportadoras" },
+        ],
+      },
+      {
+        nombre: "N2XSY / N2XSEY",
+        imagen: "/img/productos/N2XY.png",
+        descripcion: "Cable rígido de media tensión, ideal para instalaciones suspendidas en piques y chimeneas dentro de la mina.",
+        specs: [
+          { label: "Tensión de servicio", value: "10, 12, 15, 25 y 30 kV" },
+          { label: "Aplicación", value: "Suspendido en piques y chimeneas" },
+        ],
+      },
+      {
+        nombre: "Feltoflex NTMCWOEU",
+        imagen: "/img/productos/feltoflex.png",
+        descripcion: "Cable flexible portátil para alimentar equipos móviles de interior mina como scoops y jumbos.",
+        specs: [
+          { label: "Tensión de servicio", value: "2, 5, 10, 15 y 25 kV" },
+          { label: "Aplicación", value: "Alimentación de scoops y jumbos" },
+        ],
+      },
+      {
+        nombre: "(N) SHTOEU",
+        imagen: "/img/productos/shtoeu.png",
+        descripcion: "Cable flexible portátil de baja tensión para alimentación de equipos móviles de interior mina.",
+        specs: [
+          { label: "Tensión de servicio", value: "1000 V" },
+          { label: "Aplicación", value: "Alimentación de scoops y jumbos" },
+        ],
+      },
+    ],
+  },
+  {
+    id: "variadores",
+    label: "Cables para variadores de velocidad",
+    intro: "Cable flexible diseñado específicamente para la conexión entre motores y variadores de frecuencia (VFD).",
+    productos: [
+      {
+        nombre: "Cable eléctrico para variadores VFD",
+        imagen: "/img/productos/variadores.png",
+        descripcion: "Cable flexible para la conexión de alimentación entre motores y variadores de velocidad, minimizando interferencia eléctrica en el control del motor.",
+        specs: [
+          { label: "Tensión de servicio", value: "1000 V" },
+          { label: "Aplicación", value: "Motores y variadores de velocidad" },
+        ],
+      },
+    ],
+  },
+  {
+    id: "teck90",
+    label: "Cables TECK 90",
+    intro: "El estándar de cable multiconductor blindado para instalaciones industriales fijas.",
+    productos: [
+      {
+        nombre: "TECK 90 — Tipo Metal Clad (MC)",
+        imagen: "/img/productos/teck90.png",
+        descripcion: "Cable multiconductor con blindaje metálico, pensado para instalaciones fijas en planta que requieren protección mecánica adicional frente a impactos y condiciones exigentes.",
+        specs: [
+          { label: "Tipo", value: "Metal Clad (MC)" },
+          { label: "Aplicación", value: "Instalaciones fijas en planta" },
+        ],
+      },
+    ],
+  },
+  {
+    id: "bombas",
+    label: "Cables para bombas sumergibles",
+    intro: "Cables flexibles de media tensión para la alimentación de sistemas de bombeo sumergido.",
+    productos: [
+      {
+        nombre: "Cable plano para bomba sumergible",
+        imagen: "/img/productos/plano_bomba.png",
+        descripcion: "Cable flexible de media tensión con perfil plano, diseñado para la alimentación de bombas sumergibles en pozos de diámetro reducido.",
+        specs: [
+          { label: "Tensión de servicio", value: "Móvil 750 V / fija 1000 V" },
+          { label: "Aplicación", value: "Alimentación de bombas sumergibles" },
+        ],
+      },
+      {
+        nombre: "Cable redondo para bomba sumergible",
+        imagen: "/img/productos/redondo_bomba.png",
+        descripcion: "Cable flexible de media tensión con perfil redondo, para alimentación de bombas sumergibles en instalaciones estándar.",
+        specs: [
+          { label: "Tensión de servicio", value: "Móvil 750 V / fija 1000 V" },
+          { label: "Aplicación", value: "Alimentación de bombas sumergibles" },
+        ],
+      },
+    ],
+  },
+  {
+    id: "control",
+    label: "Control, instrumentación, automatización y fibra óptica",
+    intro: "Cables para transmisión de señales, protocolos de automatización industrial y redes de datos.",
+    productos: [
+      {
+        nombre: "Cables de instrumentación",
+        imagen: "/img/productos/instrumentacion.png",
+        descripcion: "Cables para la transmisión de señales analógicas y digitales a nivel industrial, disponibles en múltiples configuraciones de pares y tríadas según la necesidad del proyecto.",
+        specs: [
+          { label: "Aislamiento", value: "PVC (105°C) y XLPE (90°C)" },
+          { label: "Tensión de trabajo", value: "300 V (PLTC/ITC)" },
+          { label: "Configuraciones", value: "1, 2, 4, 8, 12 pares (22-14 AWG) / 1, 4, 8, 12 tríadas (20-16 AWG)" },
+        ],
+      },
+      {
+        nombre: "Cables buses de campo",
+        imagen: "/img/productos/buses-campo.png",
+        descripcion: "Cables para la transmisión de señales de protocolos industriales, usados en sistemas de automatización y control de procesos.",
+        specs: [
+          { label: "Aislamiento", value: "Polietileno" },
+          { label: "Tensión de trabajo", value: "300 V (ModBus/CANBus) y 600 V (FieldBus/Profibus PA)" },
+        ],
+      },
+      {
+        nombre: "Cables estructurados",
+        imagen: "/img/productos/estructurado.png",
+        descripcion: "Cables para cableado estructurado de redes de datos en instalaciones industriales y corporativas.",
+        specs: [
+          { label: "Aislamiento", value: "Polietileno" },
+          { label: "Configuración", value: "CAT 6A" },
+        ],
+      },
+      {
+        nombre: "Cables de fibra óptica",
+        imagen: "/img/productos/fibra-optica.png",
+        descripcion: "Cables para redes de datos de alta velocidad, con inmunidad a interferencia electromagnética — ideales para plantas con equipos de alta potencia cerca de las líneas de datos.",
+        specs: [],
+      },
+    ],
+  },
 ];
 
-const tier2 = [
-  { name: "Instrumentación armada MC", use: "Señales de control en ambientes con riesgo mecánico." },
-  { name: "RS-485 / Profibus", use: "Comunicación industrial para redes de automatización." },
-  { name: "PLTC / TC multipolar", use: "Control multiconductor entre paneles y sensores." },
-  { name: "TC-ER (Tray Cable)", use: "Instalación directa en bandeja, sin conduit." },
-];
-
-const tier3 = [
-  { name: "SOOW / SJOOW", use: "Cables flexibles de servicio pesado para intemperie." },
-  { name: "Cable de reeling flexible", use: "Para equipos con movimiento repetitivo y carretes." },
-  { name: "Fibra óptica industrial", use: "Redes de datos de alta velocidad en planta." },
-  { name: "Instrumentación alta temp. (Pansinal)", use: "Señales en ambientes de temperatura extrema." },
-];
-
-const otros = [
-  { name: "Cable de energía XLPE", use: "Distribución eléctrica en construcción e industria general." },
-  { name: "Cable marino con cubierta de caucho", use: "Resistente a ambientes salinos, uso naval y pesquero." },
-  { name: "Cable solar / fotovoltaico", use: "Proyectos de energía renovable y paneles solares." },
-  { name: "Cable retardante a la llama", use: "Seguridad en edificaciones y plantas industriales." },
+const otrosProductos = [
+  "Cadenas portacables",
+  "Enchufes mineros",
+  "Conectores mineros",
+  "Conectores para buses de campo",
 ];
 ---
 <Layout title="Productos">
   <section class="page-header">
     <div class="container">
-      <h1>Catálogo de cables</h1>
-      <p class="subtitle">Cables industriales respaldados por Zetastone, distribuidos en Perú</p>
+      <h1>Catálogo de productos</h1>
+      <p class="subtitle">Cables industriales respaldados por marcas y fábricas certificadas de primer nivel, distribuidos en Perú</p>
     </div>
   </section>
+
+  <nav class="quick-nav">
+    <div class="container quick-nav-inner">
+      {secciones.map((s) => (
+        <a href={`#${s.id}`}>{s.label}</a>
+      ))}
+      <a href="#otros">Otros productos y componentes</a>
+    </div>
+  </nav>
 
   <section class="content">
     <div class="container">
 
-      <div class="tier-block">
-        <div class="tier-label">
-          <span class="badge badge-t1">Prioridad alta</span>
-          <span class="tier-desc">Los que siempre vas a necesitar</span>
-        </div>
-        <div class="grid grid-t1">
-          {tier1.map((item) => (
-            <div class="card-t1">
-              <h3>{item.name}</h3>
-              <p>{item.use}</p>
-            </div>
-          ))}
-        </div>
-      </div>
+      {secciones.map((seccion) => (
+        <div class="tier-block" id={seccion.id}>
+          <h2 class="section-title">{seccion.label}</h2>
+          <p class="section-intro">{seccion.intro}</p>
 
-      <div class="tier-block">
-        <div class="tier-label">
-          <span class="badge badge-t2">Pedidos frecuentes</span>
-          <span class="tier-desc">Tu ventana de oportunidad</span>
-        </div>
-        <div class="grid grid-list">
-          {tier2.map((item) => (
-            <div class="list-item">
-              <span class="dot dot-t2"></span>
-              <div>
-                <h4>{item.name}</h4>
-                <p>{item.use}</p>
+          <div class="grid-productos">
+            {seccion.productos.map((p) => (
+              <div class="card-producto">
+                <div class="card-img" style={`background-image: url(${p.imagen})`}></div>
+                <div class="card-body">
+                  <h3>{p.nombre}</h3>
+                  <p class="card-desc">{p.descripcion}</p>
+                  {p.specs.length > 0 && (
+                    <div class="specs">
+                      {p.specs.map((spec) => (
+                        <div class="spec-row">
+                          <span class="spec-label">{spec.label}</span>
+                          <span class="spec-value">{spec.value}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
+      ))}
 
-      <div class="tier-block">
-        <div class="tier-label">
-          <span class="badge badge-t3">Oportunidades de nicho</span>
-          <span class="tier-desc">Para cuando ya tengas volumen</span>
-        </div>
-        <div class="grid grid-list">
-          {tier3.map((item) => (
-            <div class="list-item">
-              <span class="dot dot-t3"></span>
-              <div>
-                <h4>{item.name}</h4>
-                <p>{item.use}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div class="other-section">
-        <h3>Otros cables de alta demanda</h3>
-        <div class="grid grid-list">
-          {otros.map((item) => (
-            <div class="list-item">
-              <span class="dot dot-other"></span>
-              <div>
-                <h4>{item.name}</h4>
-                <p>{item.use}</p>
-              </div>
+      <div class="other-section" id="otros">
+        <h3>Otros productos y componentes eléctricos</h3>
+        <div class="otros-grid">
+          {otrosProductos.map((item) => (
+            <div class="otro-item">
+              <span class="dot-other"></span>
+              <span>{item}</span>
             </div>
           ))}
         </div>
@@ -132,114 +249,114 @@ const otros = [
     font-size: 16px;
   }
 
+  .quick-nav {
+    background: var(--cream);
+    border-bottom: 1px solid #e5e2d6;
+    position: sticky;
+    top: 73px;
+    z-index: 40;
+  }
+
+  .quick-nav-inner {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    padding: 14px 0;
+  }
+
+  .quick-nav a {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--gray-text);
+    white-space: nowrap;
+  }
+
+  .quick-nav a:hover {
+    color: var(--orange-dark);
+  }
+
   .content {
-    padding: 70px 0;
+    padding: 60px 0;
   }
 
   .tier-block {
-    margin-bottom: 56px;
+    margin-bottom: 64px;
+    scroll-margin-top: 120px;
   }
 
-  .tier-label {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 24px;
+  .section-title {
+    font-size: 26px;
+    margin-bottom: 8px;
   }
 
-  .badge {
-    font-family: var(--font-heading);
-    font-weight: 700;
-    font-size: 13px;
-    letter-spacing: 0.5px;
-    color: #ffffff;
-    padding: 5px 14px;
-    border-radius: 4px;
-  }
-
-  .badge-t1 { background: var(--navy); }
-  .badge-t2 { background: var(--blue); }
-  .badge-t3 { background: var(--gray-text); }
-
-  .tier-desc {
-    font-size: 13px;
+  .section-intro {
+    font-size: 14px;
     color: var(--gray-text);
-    font-style: italic;
+    max-width: 640px;
+    margin-bottom: 28px;
   }
 
-  .grid-t1 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-
-  .card-t1 {
-    border: 1.5px solid var(--navy);
-    border-radius: 8px;
-    padding: 22px;
-    position: relative;
-  }
-
-  .card-t1::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    background: var(--orange);
-    border-radius: 8px 8px 0 0;
-  }
-
-  .card-t1 h3 {
-    font-size: 19px;
-    margin-top: 6px;
-  }
-
-  .card-t1 p {
-    margin-top: 8px;
-    font-size: 13.5px;
-    color: var(--gray-text);
-    line-height: 1.6;
-  }
-
-  .grid-list {
+  .grid-productos {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 8px 32px;
+    gap: 24px;
   }
 
-  .list-item {
+  .card-producto {
+    border: 1px solid #e5e2d6;
+    border-radius: 10px;
+    overflow: hidden;
     display: flex;
-    gap: 12px;
-    align-items: flex-start;
-    padding: 14px 0;
-    border-bottom: 1px solid #ece9df;
+    flex-direction: column;
   }
 
-  .dot {
-    width: 9px;
-    height: 9px;
-    border-radius: 50%;
-    margin-top: 6px;
+  .card-img {
+    height: 160px;
+    background-size: cover;
+    background-position: center;
+    background-color: var(--cream);
+  }
+
+  .card-body {
+    padding: 18px 20px;
+  }
+
+  .card-body h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .card-desc {
+    font-size: 13.5px;
+    color: var(--dark-text);
+    line-height: 1.6;
+    margin-bottom: 14px;
+  }
+
+  .specs {
+    border-top: 1px solid #ece9df;
+    padding-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .spec-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: 12px;
+  }
+
+  .spec-label {
+    color: var(--gray-text);
     flex-shrink: 0;
   }
 
-  .dot-t2 { background: var(--blue); }
-  .dot-t3 { background: var(--gray-text); }
-  .dot-other { background: var(--orange); }
-
-  .list-item h4 {
-    font-family: var(--font-heading);
-    font-weight: 700;
-    font-size: 15px;
-    color: var(--dark-text);
-  }
-
-  .list-item p {
-    margin-top: 2px;
-    font-size: 13px;
-    color: var(--gray-text);
+  .spec-value {
+    color: var(--navy);
+    font-weight: 500;
+    text-align: right;
   }
 
   .other-section {
@@ -247,22 +364,42 @@ const otros = [
     border-radius: 10px;
     padding: 32px;
     margin-bottom: 40px;
+    scroll-margin-top: 120px;
   }
 
   .other-section h3 {
-    font-size: 16px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+    font-size: 18px;
     margin-bottom: 20px;
   }
 
-  .other-section .list-item {
-    border-bottom-color: #e0ddd1;
+  .otros-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 32px;
+  }
+
+  .otro-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid #e0ddd1;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--dark-text);
+  }
+
+  .dot-other {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--orange);
+    flex-shrink: 0;
   }
 
   .cta-block {
     text-align: center;
-    padding: 40px 0 0;
+    padding: 20px 0 0;
   }
 
   .cta-block p {
@@ -287,8 +424,8 @@ const otros = [
   }
 
   @media (max-width: 768px) {
-    .grid-t1,
-    .grid-list {
+    .grid-productos,
+    .otros-grid {
       grid-template-columns: 1fr;
     }
   }

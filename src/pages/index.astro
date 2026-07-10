@@ -1,13 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
 ---
 <Layout title="Inicio">
-  <section class="hero">
-    <div class="container hero-inner">
-      <h1>Cables industriales para <span class="accent">minería</span>, energía, pesca y construcción</h1>
+  <Hero />
+
+  <section class="nosotros-intro">
+    <div class="container nosotros-inner">
+      <span class="eyebrow">Nosotros</span>
+      <h2>No solo tenemos el producto correcto. Garantizamos que tu proyecto no se detenga.</h2>
       <p class="lead">
-        Más que un proveedor, somos tu <strong>consultor técnico en cables</strong>:
-        expertos en la industria que garantizan la continuidad operativa de tus proyectos.
+        Somos <strong>consultores técnicos en cables industriales</strong>, respaldados
+        por marcas de primer nivel. Trabajamos en los sectores de minería, energía, pesca y construcción a elegir la
+        solución correcta y a recibirla a tiempo — sin sorpresas, sin retrasos.
       </p>
       <div class="cta-row">
         <a href="/productos" class="btn btn-primary">Ver catálogo</a>
@@ -15,38 +20,90 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </div>
   </section>
+
+  <section class="sectores">
+    <div class="container">
+      <span class="eyebrow eyebrow-dark">El mejor portafolio de soluciones de cables por</span>
+      <h2 class="sectores-title">Sectores</h2>
+
+      <div class="sectores-grid">
+        <a href="/productos" class="sector-card" style="background-image: url(/img/sectores/mineria.jpg)">
+          <div class="sector-overlay"></div>
+          <div class="sector-text">
+            <h3>Minería</h3>
+            <p>Cables de media tensión, control e instrumentación para operaciones superficiales y subterráneas.</p>
+          </div>
+        </a>
+
+        <a href="/productos" class="sector-card" style="background-image: url(/img/sectores/energia.jpg)">
+          <div class="sector-overlay"></div>
+          <div class="sector-text">
+            <h3>Energía</h3>
+            <p>Soluciones para generación, transmisión y distribución eléctrica de alta exigencia.</p>
+          </div>
+        </a>
+
+        <a href="/productos" class="sector-card" style="background-image: url(/img/sectores/pesca.jpg)">
+          <div class="sector-overlay"></div>
+          <div class="sector-text">
+            <h3>Pesca</h3>
+            <p>Cables resistentes a ambientes salinos para embarcaciones y plantas pesqueras.</p>
+          </div>
+        </a>
+
+        <a href="/productos" class="sector-card" style="background-image: url(/img/sectores/construccion.jpg)">
+          <div class="sector-overlay"></div>
+          <div class="sector-text">
+            <h3>Construcción</h3>
+            <p>Cableado eléctrico y de control para proyectos de infraestructura y edificación.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
 </Layout>
 
 <style>
-  .hero {
-    background: var(--navy);
-    color: #ffffff;
-    padding: 100px 0;
+  .eyebrow {
+    display: block;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--orange-dark);
+    margin-bottom: 12px;
   }
 
-  .hero-inner {
-    max-width: 700px;
+  .eyebrow-dark {
+    color: var(--gray-text);
+    text-align: center;
+    font-size: 12px;
   }
 
-  .hero h1 {
-    color: #ffffff;
-    font-size: 42px;
+  .nosotros-intro {
+    background: var(--cream);
+    padding: 64px 0;
+  }
+
+  .nosotros-inner {
+    max-width: 720px;
+  }
+
+  .nosotros-intro h2 {
+    font-size: 30px;
     line-height: 1.3;
-  }
-
-  .accent {
-    color: var(--orange);
+    margin-bottom: 18px;
   }
 
   .lead {
-    margin-top: 24px;
-    font-size: 17px;
-    color: var(--blue-light);
+    font-size: 16.5px;
+    color: var(--dark-text);
     line-height: 1.7;
   }
 
   .cta-row {
-    margin-top: 36px;
+    margin-top: 28px;
     display: flex;
     gap: 16px;
   }
@@ -67,13 +124,76 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .btn-secondary {
-    border: 1.5px solid rgba(255, 255, 255, 0.4);
+    border: 1.5px solid var(--navy);
+    color: var(--navy);
+  }
+
+  .sectores {
+    background: #ffffff;
+    padding: 70px 0;
+    text-align: center;
+  }
+
+  .sectores-title {
+    font-size: 34px;
+    margin-bottom: 40px;
+  }
+
+  .sectores-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    text-align: left;
+  }
+
+  .sector-card {
+    position: relative;
+    height: 260px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-color: var(--navy);
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .sector-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, rgba(4,44,83,0.92) 10%, rgba(4,44,83,0.15) 70%);
+  }
+
+  .sector-text {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+  }
+
+  .sector-text h3 {
     color: #ffffff;
+    font-size: 20px;
+    margin-bottom: 6px;
+  }
+
+  .sector-text p {
+    color: var(--blue-light);
+    font-size: 12.5px;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 900px) {
+    .sectores-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   @media (max-width: 640px) {
-    .hero h1 {
-      font-size: 30px;
+    .sectores-grid {
+      grid-template-columns: 1fr;
+    }
+    .nosotros-intro h2 {
+      font-size: 24px;
     }
   }
 </style>
